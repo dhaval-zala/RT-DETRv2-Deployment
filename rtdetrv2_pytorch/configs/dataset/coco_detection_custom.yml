@@ -1,0 +1,48 @@
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+# num_classes: 365
+# remap_mscoco_category: False
+
+# num_classes: 91
+# remap_mscoco_category: False
+
+num_classes: 80
+remap_mscoco_category: True
+
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    img_folder: /home/dhavalsinh/Desktop/Object_Det_n_Seg/Datasets/poker_cards_coco/train/
+    ann_file: /home/dhavalsinh/Desktop/Object_Det_n_Seg/Datasets/poker_cards_coco/train/_annotations.coco.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  num_workers: 4
+  drop_last: True 
+  collate_fn:
+    type: BatchImageCollateFuncion
+
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    img_folder: /home/dhavalsinh/Desktop/Object_Det_n_Seg/Datasets/poker_cards_coco/valid/
+    ann_file: /home/dhavalsinh/Desktop/Object_Det_n_Seg/Datasets/poker_cards_coco/valid/_annotations.coco.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~ 
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFuncion
