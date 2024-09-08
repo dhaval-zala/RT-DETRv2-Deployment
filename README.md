@@ -24,7 +24,7 @@
 ## Quick start
 
 <video width="1000" height="600" controls>
-  <source src="./rtdetrv2_pytorch/extra/inference.mp4" type="video/mp4">
+  <source src="./rtdetrv2_pytorch/extra/inference_c_g.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
