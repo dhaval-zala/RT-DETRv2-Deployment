@@ -319,5 +319,5 @@ with open("rtdetrv2_pytorch/configs/classes.json", 'r') as file:
 #     52: 'queen of spades'
 # }
 
-mscoco_category2label = {k: i for i, k in enumerate(mscoco_category2name.keys())}
+mscoco_category2label = {int(k): i for i, k in enumerate(mscoco_category2name.keys())}
 mscoco_label2category = {v: k for k, v in mscoco_category2label.items()}
