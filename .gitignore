@@ -1,5 +1,6 @@
 deploy/models
 deploy/video_out
 rtdetrv2_pytorch/output
+rtdetrv2_pytorch/configs/rtdetrv2/rtdetrv2_r18vd_120e_coco_custom.yml
 log.txt
 deploy/__pycache__
